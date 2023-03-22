@@ -1,0 +1,50 @@
+
+:root {
+    --back: rgb(255, 255, 255);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--back);
+    display: flex;
+    justify-content: center;
+
+    user-select: none;
+}
+main {
+    text-align: center;
+    margin-top: 10vh;
+}
+
+.subsquare {
+    margin: 1vh 0px;
+
+    display: flex;
+    justify-content: center;
+}
+.square {
+    background-color: rgb(255, 0, 0);
+
+    height: 10vh;
+    width: 10vh;
+}
+
+.squarecolor {
+    background: rgb(255, 0, 0);
+}
+
+.fourSquares {
+    display: flex;
+    justify-content: center;
+    background: white;
+}
+
+.fourSquares .square {
+    margin: 0px 1vh;
+    background: rgb(255, 0, 0);
+}
