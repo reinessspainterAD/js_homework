@@ -1,0 +1,69 @@
+*{
+    padding: 0;
+    margin: 0;
+    /*Свойство box-sizing: border-box включает значения
+     отступов и границ в общую ширину и высоту элемента*/
+    box-sizing: border-box;
+}
+
+/*Установив display: flex для тела и margin:auto
+ для контейнера .card-flip-game, он будет центрирован
+  как по вертикали, так и по горизонтали.*/
+body{
+    display: flex;
+    background: #522a34;
+}
+
+.card-flip-game{
+    width: 640px;
+    height: 640px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 1000px;
+}
+
+.memory-card{
+    width: 150px;
+    height: 201px;
+    margin: 5px;
+    transform: scale(1);
+    /*Преобразование объектов в 3д пространствo*/
+    transform-style: preserve-3d;
+}
+
+/*click effect*/
+.memory-card:active{
+    transform: scale(0.95);
+    transition: transform .2s;
+}
+
+.memory-card.flip{
+    transform: rotateY(180deg)
+}
+
+.front-face, .back-face{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    /*Наложение карт друг на друга*/
+    position: absolute;
+    border-radius: 5px;
+    background: #d12c2c;
+
+    backface-visibility: hidden;
+}
+
+.front-face{
+    transform: rotateY(180deg);
+}
+
+.gameOver{
+    width: 120px;
+    height: 50px;
+    position: absolute;
+    top: 88vh;
+    right: 87.5vh;
+    bottom: 10vh;
+    visibility: hidden;
+}
